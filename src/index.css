@@ -1,13 +1,119 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+:root {
+  --main-blue: #71b7e6;
+  --main-purple: #9b59b6;
+  --main-grey: #ccc;
+  --sub-grey: #d9d9d9;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  padding: 10px;
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+}
+
+.container .title {
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container .title::before {
+  content: "";
+  position: absolute;
+  height: 3.5px;
+  width: 30px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  left: 0;
+  bottom: 0;
+}
+
+.container form .user__details .input__box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.user__details .input__box input,
+.user__details .input__box select {
+  width: calc(100% - 30px);
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid var(--main-grey);
+}
+
+.container form .user__details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user__details .input__box label {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.user__details .input__box input:focus,
+.user__details .input__box select:focus {
+  border-color: var(--main-purple);
+}
+
+.button input {
+  padding: 12px;
+  width: calc(100% - 30px);
+}
+
+form .button {
+  height: 45px;
+  margin: 45px 0;
+}
+
+form .button input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background: linear-gradient(135deg, var(--main-blue), var(--main-purple));
+  transition: all 0.3s ease;
+  margin: 1px;
+}
+
+form .button input:hover {
+  background: linear-gradient(-135deg, var(--main-blue), var(--main-purple));
+}
+
+@media only screen and (min-width: 1200px) {
+  .container {
+    max-width: 900px;
+  }
+  .user__details .input__box input,
+  .user__details .input__box select,
+  .button input {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
